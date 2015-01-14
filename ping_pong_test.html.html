@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <style>
+  div.main{
+       width:500px;
+	   height:600px;
+	   background-color:#1b3d2d;
+	   border-radius:15px;
+	   border:2px solid #a1a1a1;
+	   padding:20px 20px;
+	   margin:20px;
+	   color:white;
+  }
+
+  div.div1{
+        width:400px;
+		height:20px;
+		margin:15px;
+  }
+  .btn{
+        width:50px;
+		margin-left:5px;
+		border-radius:5px;
+  }
+  ul.output{
+          list-style-type:circle;
+
+  }
+    </style>
+ </head>
+
+ <body>
+ <div class="main">
+ <div class="div1">
+ <h3 > javascript</h3></div>
+ <div class="div1">
+  <h4> what number would you like me to ping pong to you</h4>
+ </div>
+ 
+ <div class="div1"> <input type="text" style="width:150px;" name="number"  id="number" value="Enter a number" onfocus="clearText()"></input><br>
+ </div>
+<div class="div1">
+<input type="button" class="btn" name="btn2" value="Cancel" >
+  <input type="button" class="btn" name="btn1" value="OK" onclick = "displayNum()"><br>
+  
+  </div>
+  <div>
+   <ul class = "output" id="output"> </ul>
+   
+ </div>
+
+ <script>
+
+ 
+function displayNum()
+{
+ 
+   var number=document.getElementById("number").value;
+   var text = "";
+  
+ if((number%5==0)&& (number%3==0))
+ text = "ping-pong" ;
+else if(number%5==0)
+ text = "pong" ;
+else if(number%3==0) 
+ text = "ping" ;
+ else
+ text = number ;
+
+ document.getElementById("output").innerHTML += text + "<br>";
+}
+function clearText()
+{
+ document.getElementById("number").value="";
+}
+
+  </script>
+ </body>
+</html>
