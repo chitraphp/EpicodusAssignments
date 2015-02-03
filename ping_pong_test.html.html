@@ -28,8 +28,8 @@
 		margin-left:5px;
 		border-radius:5px;
   }
-  ul.output{
-          list-style-type:circle;
+  .output ul{
+          list-style-type:disc;
 
   }
     </style>
@@ -50,9 +50,11 @@
   <input type="button" class="btn" name="btn1" value="OK" onclick = "displayNum()"><br>
   
   </div>
-  <div>
-   <ul class = "output" id="output"> </ul>
+  <div class = "output" >
    
+   <ul id="output">
+   
+   </ul>
  </div>
 
  <script>
@@ -63,17 +65,20 @@ function displayNum()
  
    var number=document.getElementById("number").value;
    var text = "";
+   for(i=1;i<=number;i++)
+{
   
- if((number%5==0)&& (number%3==0))
+ if((i%5==0)&& (i%3==0))
  text = "ping-pong" ;
-else if(number%5==0)
+else if(i%5==0)
  text = "pong" ;
-else if(number%3==0) 
+else if(i%3==0) 
  text = "ping" ;
  else
- text = number ;
+ text = i;
 
  document.getElementById("output").innerHTML += text + "<br>";
+ }
 }
 function clearText()
 {
